@@ -244,7 +244,7 @@ if __name__ == '__main__':
      choices=["InterAug","BBAug","NoAug","AugMix"])
    parser.add_argument('--train_dataset',default=['trainval2012','trainval2007'],nargs='+')
    parser.add_argument('--test_dataset',type = str, default="PASCAL2007")
-   parser.add_argument('--OUTPUT_DIR',type=str, default="/p/lustre2/thopalli/obj_detection/checkpoints/pascalVOC_split_class")
+   parser.add_argument('--OUTPUT_DIR',type=str, default="/obj_detection/checkpoints/pascalVOC_split_class")
    parser.add_argument('--seed',type=str,default='1')
    parser.add_argument('--percent',type=float,default=0.4)
    parser.add_argument('--model',type=str, choices=['faster_rcnn','retinanet'],default='retinannet')
@@ -268,8 +268,8 @@ if __name__ == '__main__':
       per= args.percent
       string = '_per_'+str(per)+'_seed_'+str(seed_arg)#+'_notsplit_class'
       
-      root_2012 = "/p/lustre2/thopalli/detectron2_datasets/VOC/DATA/VOCdevkit/VOC2012"
-      root_2007 = "/p/lustre2/thopalli/detectron2_datasets/VOC/DATA/VOCdevkit/VOC2007"
+      root_2012 = "/detectron2_datasets/VOC/DATA/VOCdevkit/VOC2012"
+      root_2007 = "/detectron2_datasets/VOC/DATA/VOCdevkit/VOC2007"
 
       if per ==1.0:
          register_pascal_voc("trainval_2012", root_2012, "trainval", 2012, class_names=CLASS_NAMES)
